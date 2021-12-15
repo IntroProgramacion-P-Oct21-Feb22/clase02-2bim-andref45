@@ -30,21 +30,25 @@ public class Ejemplo12 {
         System.out.println("Ingrese el número de elementos del arreglo");
         numeroElementos = entrada.nextInt();
         sueldos = new double[numeroElementos];
-                
-        for (int i = 0; i < numeroElementos; i++) {
-            // se solicita el los datos por teclado
-            System.out.println("Ingrese el sueldo de un empleado");
-            sueldoIngresado = entrada.nextDouble();
-            sueldos[i] = sueldoIngresado;
+
+        if (numeroElementos > 5) {
+            for (int i = 0; i < numeroElementos; i++) {
+                // se solicita el los datos por teclado
+                System.out.println("Ingrese el sueldo de un empleado");
+                sueldoIngresado = entrada.nextDouble();
+                sueldos[i] = sueldoIngresado;
+            }
+
+            for (int i = 0; i < numeroElementos; i++) {
+                sumaSueldos = sumaSueldos + sueldos[i];
+
+            }
+
+            System.out.printf("La suma de los sueldos es: %.2f\n", sumaSueldos);
+        } else {
+            System.out.println("Número de elementos inválidos");
+
         }
-        
-        for (int i = 0; i < numeroElementos; i++) { 
-            sumaSueldos = sumaSueldos + sueldos[i];
-            
-        }
-        
-        System.out.printf("La suma de los sueldos es: %.2f\n", sumaSueldos);
-        
     }
 
 }
